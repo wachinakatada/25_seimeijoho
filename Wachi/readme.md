@@ -53,20 +53,20 @@ $ touch [ファイル名]
 
 ```sh
 # ファイルを移動
-mv [ファイル名] [移動先ディレクトリ名]
+$ mv [ファイル名] [移動先ディレクトリ名]
 
 # ファイル名の変更
-mv [ファイル名] [新ファイル名]
+$ mv [ファイル名] [新ファイル名]
 ```
 
 ### 1.7. cp（こぴー）
 （文字通りコピーを作る）
 ```sh
 # ファイルをコピーする
-cp [ファイル名] [コピー先ディレクトリ名]
+$ cp [ファイル名] [コピー先ディレクトリ名]
 
 # ファイルの内容をコピーする
-cp [ファイル名] [コピーファイル名]
+$ cp [ファイル名] [コピーファイル名]
 ```
 
 ### 1.8. rm（あーるえむ）
@@ -74,7 +74,7 @@ cp [ファイル名] [コピーファイル名]
 
 ```sh
 # ファイルを消去する
-rm [ファイル名]
+$ rm [ファイル名]
 ```
 
 
@@ -82,20 +82,20 @@ rm [ファイル名]
 ### 演習1: ここまでのコマンドを使ってみよう
 ```sh
 # 適当なディレクトリを作成する
-$ mkdir bioinfo
+mkdir bioinfo
 
 # 作成したディレクトリに移動する
-$ cd bioinfo
+cd bioinfo
 
 # 空のファイル file1.txt を作成する
-$ touch file1.txt
+touch file1.txt
 
 # file1.txt を file2.txt に移動（ファイル名の変更）
-$ mv file1.txt file2.txt
+mv file1.txt file2.txt
 
 # 確認
-$ ls
-file2.txt
+ls
+# file2.txt
 
 # file2.txtを消去
 rm file2.txt
@@ -107,8 +107,8 @@ touch file3.csv
 cp file3.csv file4.csv
 
 # 確認
-$ ls
-file3.csv	file4.csv
+ls
+# file3.csv	file4.csv
 ```
 
 
@@ -116,25 +116,25 @@ file3.csv	file4.csv
 
 ```sh
 # 適当なディレクトリを作成する
-$ mkdir dir1
+mkdir dir1
 
 # 空ファイル file1.txt と file2.txt を作成する
 touch file1.txt file2.txt
 
 # 確認（-Fのオプションのある時とない時の違いに注意）
-$ ls
-dir1		file1.txt	file2.txt	file3.csv	file4.csv
-$ ls -F
-dir1/		file1.txt	file2.txt	file3.csv	file4.csv
+ls
+# dir1		file1.txt	file2.txt	file3.csv	file4.csv
+ls -F
+# dir1/		file1.txt	file2.txt	file3.csv	file4.csv
 
 # ワイルドカードを使って、当てはまるものだけディレクトリ dir1 に移動する
-$ mv *.csv dir1/
+mv *.csv dir1/
 
 # 確認
-$ ls
-dir1		file1.txt	file2.txt
-$ ls dir1/
-file3.csv	file4.csv
+ls
+# dir1		file1.txt	file2.txt
+ls dir1/
+# file3.csv	file4.csv
 ```
 
 
@@ -181,46 +181,46 @@ $ wc -l [調べたいファイル名]
 ヒト・ボノボ・チンパンジー・ゴリラの腸内細菌を比較した研究 [Moeller, A. H., Caro-Quintero, A., Mjungu, D., Georgiev, A. V., Lonsdorf, E. V., Muller, M. N., ... & Ochman, H. (2016). Cospeciation of gut microbiota with hominids. *Science*, *353*(6297), 380-382.] のデータの一部を改変して利用
 
 **ファイル転送ツールを使うとき**
-`/mnt/bioInfo2024_share/wachi/data`をコピーする
+`/mnt/bioInfo2025_share/wachi/data`をコピーする
 
 **共有サーバー上で作業をするとき**
 ```sh
-cp -r /mnt/bioInfo2024_share/wachi/data exe2
+cp -r /mnt/bioInfo2025_share/wachi/data exe2
 cd exe2
 ```
 
 ```
 # それぞれのファイルの中身を less で確認
-$ less Human_Bifidobacteriaceae_mod.fasta
-$ less Bonobo_Bifidobacteriaceae_mod.fasta
-$ less Chimp_Bifidobacteriaceae_mod.fasta
-$ less Gorilla_Bifidobacteriaceae_mod.fasta
+less Human_Bifidobacteriaceae_mod.fasta
+less Bonobo_Bifidobacteriaceae_mod.fasta
+less Chimp_Bifidobacteriaceae_mod.fasta
+less Gorilla_Bifidobacteriaceae_mod.fasta
 
 # それぞれのファイルの中身を cat で確認
-$ cat Human_Bifidobacteriaceae_mod.fasta
-$ cat Bonobo_Bifidobacteriaceae_mod.fasta
-$ cat Chimp_Bifidobacteriaceae_mod.fasta
-$ cat Gorilla_Bifidobacteriaceae_mod.fasta
+cat Human_Bifidobacteriaceae_mod.fasta
+cat Bonobo_Bifidobacteriaceae_mod.fasta
+cat Chimp_Bifidobacteriaceae_mod.fasta
+cat Gorilla_Bifidobacteriaceae_mod.fasta
 
 # それぞれのファイルの行数・単語数・バイト数を確認
-$ wc Human_Bifidobacteriaceae_mod.fasta
-$ wc Bonobo_Bifidobacteriaceae_mod.fasta
-$ wc Chimp_Bifidobacteriaceae_mod.fasta
-$ wc Gorilla_Bifidobacteriaceae_mod.fasta
+wc Human_Bifidobacteriaceae_mod.fasta
+wc Bonobo_Bifidobacteriaceae_mod.fasta
+wc Chimp_Bifidobacteriaceae_mod.fasta
+wc Gorilla_Bifidobacteriaceae_mod.fasta
 
 # それぞれのファイルの行数・単語数・バイト数をワイルドカードで確認
-$ wc *fasta
-     102     102   16176 Bonobo_Bifidobacteriaceae_mod.fasta
-      18      18    2844 Chimp_Bifidobacteriaceae_mod.fasta
-     274     274   43584 Gorilla_Bifidobacteriaceae_mod.fasta
-     220     220   34771 Human_Bifidobacteriaceae_mod.fasta
-     614     614   97375 total
+wc *fasta
+#     102     102   16176 Bonobo_Bifidobacteriaceae_mod.fasta
+#      18      18    2844 Chimp_Bifidobacteriaceae_mod.fasta
+#     274     274   43584 Gorilla_Bifidobacteriaceae_mod.fasta
+#     220     220   34771 Human_Bifidobacteriaceae_mod.fasta
+#     614     614   97375 total
 
 # 配列名の一覧を grep で確認
-$ grep "Human" "Human_Bifidobacteriaceae_mod.fasta"
-$ grep "Bonobo" "Bonobo_Bifidobacteriaceae_mod.fasta"
-$ grep "Chimp" "Chimp_Bifidobacteriaceae_mod.fasta"
-$ grep "Gorilla" "Gorilla_Bifidobacteriaceae_mod.fasta"
+grep "Human" "Human_Bifidobacteriaceae_mod.fasta"
+grep "Bonobo" "Bonobo_Bifidobacteriaceae_mod.fasta"
+grep "Chimp" "Chimp_Bifidobacteriaceae_mod.fasta"
+grep "Gorilla" "Gorilla_Bifidobacteriaceae_mod.fasta"
 ```
 
 
@@ -282,50 +282,50 @@ $ tar jxvf [まとめて圧縮した後のファイル名(.tar.bz2)]
 
 ```sh
 # ディレクトリを作成する
-$ mkdir dir2
+mkdir dir2
 
 # fasta形式のファイルを全てコピーする
-$ cp *.fasta dir2
+cp *.fasta dir2
 
 # 更新日時を確認
-$ ls -cl dir2/
+ls -cl dir2/
 
 # gzip で圧縮を試みる
-$ gzip dir2
-gzip: dir2 is a directory
+gzip dir2
+# gzip: dir2 is a directory
 
 # tar でまとめる
-$ tar cvf dir2.tar dir2
+tar cvf dir2.tar dir2
 
 # gzip で圧縮する
 # dir2.tar がなくなることに注目
-$ gzip dir2.tar
+gzip dir2.tar
 
 # 展開する
 # dir2.tar.gz がなくなることに注目
-$ gunzip dir2.tar.gz
+gunzip dir2.tar.gz
 
 # tarでまとめてgzipで圧縮を一度に行う
-$ tar zcvf dir2.tar.gz dir2
+tar zcvf dir2.tar.gz dir2
 
 # tarでまとめてbzip2で圧縮を一度に行う
 # dir2 がなくならないことに注目
-$ tar jcvf dir2.tar.bz2 dir2
+tar jcvf dir2.tar.bz2 dir2
 
 # それぞれのファイルの行数・単語数・バイト数をワイルドカードで確認
-$ wc dir2.tar*
-     618     743  110080 dir2.tar
-      20      92    4692 dir2.tar.bz2
-      16     131    5836 dir2.tar.gz
-     654     966  120608 total
+wc dir2.tar*
+#     618     743  110080 dir2.tar
+#      20      92    4692 dir2.tar.bz2
+#      16     131    5836 dir2.tar.gz
+#     654     966  120608 total
 
 # tarで展開する
 # dir2 が上書きされること・圧縮ファイルは残ることに注目
-$ tar zxvf dir2.tar.gz
-$ tar jxvf dir2.tar.bz2
+tar zxvf dir2.tar.gz
+tar jxvf dir2.tar.bz2
 
 # 更新日時を確認
-$ ls -cl dir2/
+ls -cl dir2/
 ```
 
 
@@ -365,38 +365,38 @@ $ less err.txt
 
 ```sh
 # 引数の文字列 "ATGCTTCGATGTAGAAGAGT" を表示する
-$ echo "ATGCTTCGATGTAGAAGAGT"
-ATGCTTCGATGTAGAAGAGT
+echo "ATGCTTCGATGTAGAAGAGT"
+# ATGCTTCGATGTAGAAGAGT
 
 # ファイルに出力する
-$ echo "ATGCTTCGATGTAGAAGAGT" > DNA.txt
+echo "ATGCTTCGATGTAGAAGAGT" > DNA.txt
 
 # 確認
-$ less DNA.txt
+less DNA.txt
 
 # 引数の文字列 "ATGCTTCGATGTAGAAGAGT" の T を U に変換する
-$ sed 's/T/U/g' DNA.txt
-AUGCUUCGAUGUAGAAGAGU
+sed 's/T/U/g' DNA.txt
+# AUGCUUCGAUGUAGAAGAGU
 
 # ファイルに出力する
-$ sed 's/T/U/g' DNA.txt > RNA.txt
+sed 's/T/U/g' DNA.txt > RNA.txt
 
 # 確認
-$ less RNA.txt
+less RNA.txt
 
 # ここまでのコマンドをパイプでつなぐ
-$ echo "ATGCTTCGATGTAGAAGAGT" | sed 's/T/U/g' >> RNA.txt
+echo "ATGCTTCGATGTAGAAGAGT" | sed 's/T/U/g' >> RNA.txt
 
 # 確認
 # 追記をしたので、AUGCUUCGAUGUAGAAGAGU が2つ書き込まれているはず。
-$ less RNA.txt
+less RNA.txt
 
 # 同様のことをリダイレクトだけで行う
-$ sed 's/T/U/g' < DNA.txt >> RNA.txt
+sed 's/T/U/g' < DNA.txt >> RNA.txt
 
 # 確認
 # さらに追記をしたので、AUGCUUCGAUGUAGAAGAGU が3つ書き込まれているはず。
-$ less RNA.txt
+less RNA.txt
 ```
 
 [EXTRA]
@@ -429,43 +429,43 @@ $ sed -e 's/AAA/BBB/g' [処理を行いたいファイル名]
 
 ```sh
 # cat とリダイレクトで複数のファイルを統合する
-$ cat *.fasta > All_Bifidobacteriaceae_mod.fasta
+cat *.fasta > All_Bifidobacteriaceae_mod.fasta
 
 # 確認
-$ wc *.fasta
-     614     614   97375 All_Bifidobacteriaceae_mod.fasta
-     102     102   16176 Bonobo_Bifidobacteriaceae_mod.fasta
-      18      18    2844 Chimp_Bifidobacteriaceae_mod.fasta
-     274     274   43584 Gorilla_Bifidobacteriaceae_mod.fasta
-     220     220   34771 Human_Bifidobacteriaceae_mod.fasta
-    1228    1228  194750 total
+wc *.fasta
+#     614     614   97375 All_Bifidobacteriaceae_mod.fasta
+#     102     102   16176 Bonobo_Bifidobacteriaceae_mod.fasta
+#      18      18    2844 Chimp_Bifidobacteriaceae_mod.fasta
+#     274     274   43584 Gorilla_Bifidobacteriaceae_mod.fasta
+#     220     220   34771 Human_Bifidobacteriaceae_mod.fasta
+#    1228    1228  194750 total
 
 # 圧縮する
-$ gzip All_Bifidobacteriaceae_mod.fasta
+gzip All_Bifidobacteriaceae_mod.fasta
 
 # 圧縮したまま中身の確認 (zless)
 # less と同じで q でページを閉じる
-$ zless All_Bifidobacteriaceae_mod.fasta.gz
+zless All_Bifidobacteriaceae_mod.fasta.gz
 
 # 圧縮したまま指定した文字列が含まれる行を出力 (zgrep)
-$ zgrep "Human" "All_Bifidobacteriaceae_mod.fasta.gz"
+zgrep "Human" "All_Bifidobacteriaceae_mod.fasta.gz"
 
 # コピーを作成
-$ cp All_Bifidobacteriaceae_mod.fasta.gz copy.fasta.gz 
+cp All_Bifidobacteriaceae_mod.fasta.gz copy.fasta.gz 
 
 # 確認
-$ wc *.fasta.gz
+wc *.fasta.gz
 
 # 圧縮したまま統合 (cat)
-$ cat *.fasta.gz > cat.fasta.gz
+cat *.fasta.gz > cat.fasta.gz
 
 # 確認
 # なぜ 192 にならないのかわかりません、すみません
-$ wc *.fasta.gz
-      18      96    4787 All_Bifidobacteriaceae_mod.fasta.gz
-      36     191    9574 cat.fasta.gz
-      18      96    4787 copy.fasta.gz
-      72     383   19148 total
+wc *.fasta.gz
+#      18      96    4787 All_Bifidobacteriaceae_mod.fasta.gz
+#      36     191    9574 cat.fasta.gz
+#      18      96    4787 copy.fasta.gz
+#      72     383   19148 total
 ```
 
 #### [発展4で使うコマンド]

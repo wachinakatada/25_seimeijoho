@@ -185,7 +185,7 @@ $ wc -l [調べたいファイル名]
 
 **共有サーバー上で作業をするとき**
 ```sh
-cp -r /mnt/bioInfo2025_share/wachi/data exe2
+cp -r /mnt/bioInfo/bioInfo2025_share/wachi/data exe2
 cd exe2
 ```
 

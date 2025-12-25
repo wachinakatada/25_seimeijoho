@@ -117,7 +117,7 @@ q()
 ### 4-2)EIGENSOFTのインストール
 ```
 cd EIG/src
-make
+make LDLIBS="-llapacke"
 make install
 ```
 

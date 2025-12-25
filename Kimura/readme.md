@@ -14,13 +14,12 @@ SplitTree4のインストール ( [link](https://uni-tuebingen.de/en/fakultaeten
 
 ## 1)準備
 
-### 1-1)計算機サーバへの接続
-http://pjc.lab.u-ryukyu.ac.jp/ を参照。  
+### 1-1)計算機サーバへの接続  
 PuTTY(またはTera Term）およびFileZilla（またはWinSCPかCyberduck）を起動。    
 ユーザ名、passを入力。  
 
 ### 1-2)テストファイルディレクトリのコピー
-```cp -r /mnt/bioInfo2025_share/kimura kimura```
+```cp -r /mnt/bioInfo/bioInfo2025_share/kimura kimura```
 
 ### 1-3)ディレクトリの移動
 ```cd kimura```

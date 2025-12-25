@@ -20,7 +20,7 @@ PuTTY(またはTera Term）およびFileZilla（またはWinSCPかCyberduck）�
 ユーザ名、passを入力。  
 
 ### 1-2)テストファイルディレクトリのコピー
-```cp -r /mnt/bioInfo2024_share/kimura kimura```
+```cp -r /mnt/bioInfo2025_share/kimura kimura```
 
 ### 1-3)ディレクトリの移動
 ```cd kimura```

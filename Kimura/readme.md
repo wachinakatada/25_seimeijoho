@@ -164,7 +164,7 @@ fn = "pca_merged.evec"
 evec = read.table(fn, col.names=c("Sample", "PC1", "PC2", "PC3", "PC4", "PC5", "Pop"))
 png("PC1vsPC2.png", width = 600, height = 600)
 plot(evec$PC1, evec$PC2, col=factor(evec$Pop))
-legend("bottomright", legend=levels(factor(evec$Pop)), col=1:length(levels(factor(evec$Pop))), pch=20)
+legend("topleft", legend=levels(factor(evec$Pop)), col=1:length(levels(factor(evec$Pop))), pch=20)
 dev.off()
 q()
 ```

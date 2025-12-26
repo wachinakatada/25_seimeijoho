@@ -5,7 +5,7 @@
 
 2025年12月26日作成
 
-<img src="https://raw.githubusercontent.com/wachinakatada/25_seimeijoho/main/Ito/Figure/ゲノムアセンブリーの流れ.jpg" width="1000">
+<img src="https://raw.githubusercontent.com/wachinakatada/25_seimeijoho/main/Ito/Figure/25ゲノムアセンブリーの流れ.jpg" width="1000">
 
 #### 使用するツール
 - コマンド
